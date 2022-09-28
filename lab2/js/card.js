@@ -10,10 +10,8 @@ export default class Card {
   markDone(target) {
     // to mark a card as done, we add a class .bingo__card--done to it
     // 🔥🔥🔥 TODO 5: mark or unmark (toggle) a bingo card when clicked
-    console.log("Marking card as done");
-    console.log(target);
     // hint: use class .bingo__card--done
-
+    
     console.log("Marking card as done");
     console.log(target);
     target.classList.toggle("bingo__card--done");
