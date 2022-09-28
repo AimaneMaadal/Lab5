@@ -13,6 +13,10 @@ export default class Card {
     console.log("Marking card as done");
     console.log(target);
     // hint: use class .bingo__card--done
+
+    console.log("Marking card as done");
+    console.log(target);
+    target.classList.toggle("bingo__card--done");
   }
 
   render(counter) {
@@ -24,7 +28,7 @@ export default class Card {
     // let card = document.createElement("div");
     // card.dataset.number = counter + 1;
     // don't forget to append the child to to DOM
-    
+
     const board = document.getElementsByClassName('bingo__board');
     console.log(board); 
 
@@ -39,10 +43,12 @@ export default class Card {
 
 
     // 🔥🔥🔥 TODO4: when we click an item, we want to check for winners and we want to save the selection to storage
-    card.addEventListener("click", (e) => {
-      // this.markDone(e.target);
+card.addEventListener("click", (e) => {
+      this.markDone(e.target);
       // call checkWinner() on the Bingo class
+      Bingo.checkWinner(e.target.getAttribute('data-number'));
       // try to call the save() method on the Bingo class
+      Bingo.save();
     });
   }
 }
