@@ -113,14 +113,25 @@ export default class Bingo {
     // load the cards that are done from localstorage
     // this works the other way around of the save function
     // load the saved string from localstorage and parse it as an array, then loop over it
+    // let cardsWon = JSON.parse();
+    // JSON.parse() will convert the string [1, 7, 8] back to an array which you can loop
+    // loop over the numbers 1, 7, 8 and mark those cards as done by adding the right CSS class
+    // .bingo__card--done
+
     console.log("loading bingo selection from localstorage");
 
-    // check if localstorage item exists
     if (localStorage.getItem("bingo")) {
-      // let cardsWon = JSON.parse();
-      // JSON.parse() will convert the string [1, 7, 8] back to an array which you can loop
-      // loop over the numbers 1, 7, 8 and mark those cards as done by adding the right CSS class
-      // .bingo__card--done
+      console.log("bingo item exists");
+      let cardsWon = JSON.parse(localStorage.getItem("bingo"));
+      //check if cardsWon is more then 5
+      if (cardsWon.length >= 5) {
+        localStorage.removeItem("bingo");
+      } else {
+      console.log(cardsWon);
+      cardsWon.forEach(card => {
+        document.querySelector(`[data-number="${card}"]`).classList.add("bingo__card--done");
+      });
+      }
     }
   }
 }
