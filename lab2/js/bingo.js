@@ -59,17 +59,9 @@ export default class Bingo {
     }
   }
 
-  static checkWinner(number) {
+  static checkWinner() {
     // a static function can be called without creating an instance of the class
     console.log("Checking for a winner");
-
-    //count amount of divs with class bingo__card--done
-    let cardsWon = document.querySelectorAll(".bingo__card--done").length;
-    console.log(cardsWon);
-    
-    if (cardsWon === 5) {
-      document.querySelector(".bingo__overlay").style.display = "block";
-    }
 
     // 🔥🔥🔥 TODO 6
     // count all cards that are marked as done (select done items and count them with .length)
@@ -89,17 +81,6 @@ export default class Bingo {
     console.log("Saving bingo to localstorage");
     // let cards = document.querySelectorAll(".bingo__card--done");
 
-    // loop over the cards that are done and push the card number to the array
-
-    let cards = document.querySelectorAll(".bingo__card--done");
-    cards.forEach(card => {
-      cardsWon.push(card.getAttribute("data-number"));
-    });
-
-    localStorage.setItem("bingo", JSON.stringify(cardsWon));
-
-    console.log(window.localStorage.getItem('bingo'));
-    
     // if there are not done cards, remove localstorage
     // if (cards.length === 0) {
     // remove localstorage
