@@ -24,6 +24,19 @@ export default class Card {
     // let card = document.createElement("div");
     // card.dataset.number = counter + 1;
     // don't forget to append the child to to DOM
+    
+    const board = document.getElementsByClassName('bingo__board');
+    console.log(board); 
+
+    let card = document.createElement('div');
+    let id = "bingo__card" + (counter + 1);
+    card.setAttribute("id", id);
+    card.setAttribute("class", "bingo__card");
+    card.dataset.number = counter + 1;
+    card.innerHTML = this.title;
+
+    board[0].appendChild(card);
+
 
     // 🔥🔥🔥 TODO4: when we click an item, we want to check for winners and we want to save the selection to storage
     card.addEventListener("click", (e) => {
