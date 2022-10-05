@@ -13,7 +13,7 @@ export default class Wheather {
             let now = new Date().getTime();
             let diff = now - time;
             let minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-            if (minutes > 80) {
+            if (minutes > 1) {
                 this.lat = position.coords.latitude;
                 this.long = position.coords.longitude;
                 localStorage.setItem("lat", this.lat);
@@ -31,10 +31,6 @@ export default class Wheather {
             localStorage.setItem("time", new Date().getTime());
         }
         this.getWeather();
-
-
-
-
     }
 
     getWeather() {
@@ -44,7 +40,7 @@ export default class Wheather {
             let now = new Date().getTime();
             let diff = now - time;
             let minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-            if (minutes > 60) {
+            if (minutes > 1) {
                 this.fetchWeather();
                 console.log("fetching new weather");
             } else {
@@ -59,7 +55,7 @@ export default class Wheather {
     renderWeather(weather) {
         let data = JSON.parse(weather);
         let description = data.data[0].weather.description;
-        document.querySelector(".temp").innerHTML = "The temperture is <b>" + data.data[0].temp + "°C</b> and the weather is <b>" + description+"</b>";
+        document.querySelector(".temp").innerHTML = "The temperture is <b>" + data.data[0].temp + "°C</b> and the weather is <b>" + description + "</b>";
         this.getPlaylist(description);
     }
 
