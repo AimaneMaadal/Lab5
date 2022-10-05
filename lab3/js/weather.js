@@ -13,7 +13,7 @@ export default class Wheather {
             let now = new Date().getTime();
             let diff = now - time;
             let minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-            if (minutes > 1) {
+            if (minutes > 60) {
                 this.lat = position.coords.latitude;
                 this.long = position.coords.longitude;
                 localStorage.setItem("lat", this.lat);
@@ -41,7 +41,7 @@ export default class Wheather {
             let diff = now - time;
             let minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
             console.log(minutes);
-            if (minutes > 0.1) {
+            if (minutes > 60) {
                 this.fetchWeather();
                 console.log("fetching new weather");
             } else {
