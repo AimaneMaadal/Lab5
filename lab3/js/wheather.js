@@ -59,7 +59,7 @@ export default class Wheather {
     renderWeather(weather) {
         let data = JSON.parse(weather);
         let description = data.data[0].weather.description;
-        document.querySelector(".temp").innerHTML = "The temperture is " + data.data[0].temp + "°C and the weather is " + description;
+        document.querySelector(".temp").innerHTML = "The temperture is <b>" + data.data[0].temp + "°C</b> and the weather is <b>" + description+"</b>";
         this.getPlaylist(description);
     }
 
