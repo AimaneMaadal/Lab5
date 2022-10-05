@@ -20,9 +20,24 @@ export default class Wheather {
             .then(data => {
                 let description = data.data[0].weather.description;
                 console.log(description);
+                this.getPlaylist(description);
             })
     }
 
+    getPlaylist(description) {
+        const options = {
+            method: 'GET',
+            headers: {
+                'X-RapidAPI-Key': '5d892729bdmsh4e13c9a937c7879p18f0efjsn3fd1ff502a15',
+                'X-RapidAPI-Host': 'spotify81.p.rapidapi.com'
+            }
+        };
+        
+        fetch('https://spotify81.p.rapidapi.com/playlist?id=37i9dQZF1DX4Wsb4d7NKfP', options)
+            .then(response => response.json())
+            .then(response => console.log(response))
+            .catch(err => console.error(err));
+    }
 
 
 }
