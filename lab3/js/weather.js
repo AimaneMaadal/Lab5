@@ -40,6 +40,7 @@ export default class Wheather {
             let now = new Date().getTime();
             let diff = now - time;
             let minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            console.log(minutes);
             if (minutes > 1) {
                 this.fetchWeather();
                 console.log("fetching new weather");
