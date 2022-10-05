@@ -21,7 +21,7 @@
   background-position: center !important;
   background-size: cover !important;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-content: center;
   align-items: center;
 }
@@ -29,6 +29,10 @@
   width: 150px;
   height: 150px;
   border-radius: 100px;
+}
+.playlist-info{
+  width: 200px;
+  height: 200px;
 }
 
 a {

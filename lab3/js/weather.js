@@ -6,11 +6,15 @@ export default class Wheather {
     }
 
     getCurrentPosition(position) {
-        this.lat = position.coords.latitude;
-        this.long = position.coords.longitude;
-        console.log(this.lat);
-        console.log(this.long);
-        this.getWeather();
+        if (localStorage.getItem("time") == null || localStorage.getItem("time") < Date.now() - 3600000) {
+            localStorage.setItem("time", Date.now());
+            navigator.geolocation.getCurrentPosition(this.getCurrentPosition.bind(this));
+            this.getWheather();
+        } else {
+            this.lat = localStorage.getItem("lat");
+            this.long = localStorage.getItem("long");
+            this.getWheather();
+        }
     }
 
     getWeather() {
