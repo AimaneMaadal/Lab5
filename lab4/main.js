@@ -25,7 +25,7 @@ function setLight() {
 
 function loadGLTF() {
   let balloonLoader = new THREE.GLTFLoader();
-  balloonLoader.load('./model/donutv4.glb', (gltf) => {
+  balloonLoader.load('./model/donut.gltf', (gltf) => {
     //load model and put it in Mesh variable
     Mesh = gltf.scene;
     Mesh.scale.set(0.5, 0.5, 0.5);
@@ -35,9 +35,9 @@ function loadGLTF() {
 
   //load second model
 
-  balloonLoader.load('./model/cup2.glb', (gltf) => {
+  balloonLoader.load('./model/cup.gltf', (gltf) => {
     Cup = gltf.scene;
-    Cup.scale.set(0.5, 0.5, 0.5);
+    Cup.scale.set(1, 1, 1);
     Cup.position.set(0, -7, 0);
     scene.add(Cup);
 
