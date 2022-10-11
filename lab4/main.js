@@ -24,8 +24,8 @@ function setLight() {
 }
 
 function loadGLTF() {
-  let Loader = new THREE.GLTFLoader();
-  Loader.load('./model/donutv4.glb', (gltf) => {
+  let balloonLoader = new THREE.GLTFLoader();
+  balloonLoader.load('./model/donutv4.glb', (gltf) => {
     //load model and put it in Mesh variable
     Mesh = gltf.scene;
     Mesh.scale.set(0.5, 0.5, 0.5);
@@ -35,7 +35,13 @@ function loadGLTF() {
 
   //load second model
 
+  balloonLoader.load('./model/cup2.glb', (gltf) => {
+    Cup = gltf.scene;
+    Cup.scale.set(0.5, 0.5, 0.5);
+    Cup.position.set(0, -7, 0);
+    scene.add(Cup);
 
+  });
 
 }
 
