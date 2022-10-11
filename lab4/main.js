@@ -14,9 +14,7 @@ function init() {
   document.body.appendChild(renderer.domElement);
 }
 
-//three js add soft light
 function setLight() {
-  //add a pointlight
   light2 = new THREE.PointLight(0xffffff, 1, 100);
   light2.position.set(10, 30, 0);
   light = new THREE.AmbientLight(0xffffff, 1);
@@ -26,14 +24,11 @@ function setLight() {
 function loadGLTF() {
   let balloonLoader = new THREE.GLTFLoader();
   balloonLoader.load('./model/donut.gltf', (gltf) => {
-    //load model and put it in Mesh variable
     Mesh = gltf.scene;
     Mesh.scale.set(0.5, 0.5, 0.5);
     Mesh.position.set(0, 6, 0);
     scene.add(Mesh);
   });
-
-  //load second model
 
   balloonLoader.load('./model/cup.gltf', (gltf) => {
     Cup = gltf.scene;
