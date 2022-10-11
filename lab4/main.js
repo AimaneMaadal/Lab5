@@ -18,7 +18,7 @@ function init() {
 function setLight() {
   //add a pointlight
   light2 = new THREE.PointLight(0xffffff, 1, 100);
-  light2.position.set(0, 0, 0);
+  light2.position.set(10, 30, 0);
   light = new THREE.AmbientLight(0xffffff, 1);
   scene.add(light, light2);
 }
