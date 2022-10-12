@@ -46,7 +46,7 @@ router.delete('/:id', function (req, res, next) {
 });
 
 //get message by username
-router.get('/:username', function (req, res, next) {
+router.get('/user/:username', function (req, res, next) {
   //return json with id, name, and message
   let username = req.params.username;
   res.json({
@@ -54,7 +54,6 @@ router.get('/:username', function (req, res, next) {
     status: 'ok',
   });
 });
-
 
 
 module.exports = router;
