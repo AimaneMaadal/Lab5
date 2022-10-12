@@ -7,8 +7,6 @@ https://github.com/AimaneMaadal/DEV5-myportfolio
 
 | Labo  | Link | Demo |
 | ------------- | ------------- | ------------- |
-| Lab1 (Groepswebsite)  | https://github.com/AlejandroDeWolf/DEV5-LAB1 |
-| Lab2 (HumanBingo)  | https://github.com/AimaneMaadal/DEV5-myportfolio/tree/main/lab2 | https://codesandbox.io/s/lab2-aimanemaadal-5lvcld |
-| Lab3 (Weather API)  | https://github.com/AimaneMaadal/DEV5-myportfolio/tree/main/lab3 | https://lab3-silk.vercel.app/ |
-| Lab4 (Three JS)  | https://github.com/AimaneMaadal/DEV5-myportfolio/tree/main/lab4 | https://donut-murex.vercel.app/ |
-| Lab5 (Node JS)  | Loading.... | ........ |
+| Lab5 (Node JS)  | https://github.com/AimaneMaadal/Lab5 | https://codepen.io/aimane223/pen/VwxgwjM + https://lab5-api-aimane.herokuapp.com/ |
+
+( Deze labo bevat ook commits van vorige labos, dit komt omdat ik geen rekening heb gehouden met de hosting op heroku. ik heb dus mijn repo gekopieerd en omgebouwd top lab 5 repo. )
