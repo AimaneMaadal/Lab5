@@ -37,7 +37,21 @@ function loadGLTF() {
     scene.add(Cup);
 
   });
+}
 
+//add cube
+function addSprinkels() {
+  for (let i = 0; i < 200; i++) {
+    const geometry = new THREE.BoxGeometry(0.1, 0.35, 0.1);
+    //random color
+    const material = new THREE.MeshBasicMaterial({ color: Math.random() * 0xffffff });
+    const cube = new THREE.Mesh(geometry, material);
+    let x = Math.random() * 30 - 15;
+    let y = Math.random() * 20 + 10;
+    let z = Math.random() * 20 - 1;
+    cube.position.set(x, y, z);
+    scene.add(cube);
+  }
 }
 
 
@@ -52,19 +66,22 @@ function animate() {
   }
   renderer.render(scene, camera);
 }
-
-function animate2() {
-  requestAnimationFrame(animate);
-
-  renderer.render(scene, camera);
+function animateSprinkle() {
+  requestAnimationFrame(animateSprinkle);
+  //get all the cubes 
+  let cubes = scene.children.filter((child) => child.type === 'Mesh');
+  //loop through the cubes
+  cubes.forEach((cube) => {
+    cube.position.y -= 0.1;
+  });
 }
-
 
 init();
 setLight();
 loadGLTF();
 animate();
-animate2();
+addSprinkels();
+animateSprinkle();
 
 
 window.addEventListener('resize', () => {
@@ -72,3 +89,4 @@ window.addEventListener('resize', () => {
   camera.updateProjectionMatrix();
   renderer.setSize(window.innerWidth, window.innerHeight);
 });
+
