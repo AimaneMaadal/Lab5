@@ -5,7 +5,7 @@ var router = express.Router();
 router.get('/', function (req, res, next) {
   //return json with id, name, and message
   res.json({
-    message: 'Hello World',
+    message: 'getting messages',
     status: 'ok',
   });
 });
