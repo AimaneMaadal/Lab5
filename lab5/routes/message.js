@@ -36,6 +36,15 @@ router.put('/:id', function (req, res, next) {
   });
 });
 
+router.delete('/:id', function (req, res, next) {
+  //return json with id, name, and message
+  let id = req.params.id;
+  res.json({
+    message: `DELETING message with ID ${id}`,
+    status: 'ok',
+  });
+});
+
 
 
 module.exports = router;
