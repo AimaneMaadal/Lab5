@@ -73,6 +73,9 @@ function animateSprinkle() {
   //loop through the cubes
   cubes.forEach((cube) => {
     cube.position.y -= 0.1;
+    if (cube.position.y < -10) {
+      cube.position.y = 10;
+    }
   });
 }
 
