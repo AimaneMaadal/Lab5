@@ -27,6 +27,15 @@ router.post('/', function (req, res, next) {
   });
 });
 
+router.put('/:id', function (req, res, next) {
+  //return json with id, name, and message
+  let id = req.params.id;
+  res.json({
+    message: `UPDATING message with ID ${id}`,
+    status: 'ok',
+  });
+});
+
 
 
 module.exports = router;
